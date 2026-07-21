@@ -1,3 +1,9 @@
+0.14.1
+==
+
+* Small fix to be compatible with newer libnotify versions (compiled with libnotify-0.8.8)
+* Switched to semantic versioning for future patches, etc.
+
 0.14
 ==
 

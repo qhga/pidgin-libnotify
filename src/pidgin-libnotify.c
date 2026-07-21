@@ -286,7 +286,7 @@ notify (const gchar *title,
 		g_free (tr_body);
 		return;
 	}
-	notification = notify_notification_new (title, tr_body, NULL, NULL);
+	notification = notify_notification_new (title, tr_body, NULL);
 	purple_debug_info (PLUGIN_ID, "notify(), new: "
 					 "title: '%s', body: '%s', buddy: '%s'\n",
 					 title, tr_body, best_name (buddy));
@@ -550,16 +550,16 @@ static PurplePluginInfo info = {
     0,														/* flags */
     NULL,													/* dependencies */
     PURPLE_PRIORITY_DEFAULT,									/* priority */
-    
+
     PLUGIN_ID,												/* id */
     NULL,													/* name */
     VERSION,												/* version */
     NULL,													/* summary */
     NULL,													/* description */
-    
+
     "Duarte Henriques <duarte.henriques@gmail.com>",		/* author */
     "http://sourceforge.net/projects/gaim-libnotify/",		/* homepage */
-    
+
     plugin_load,			/* load */
     plugin_unload,			/* unload */
     NULL,					/* destroy */
@@ -588,4 +588,3 @@ init_plugin (PurplePlugin *plugin)
 }
 
 PURPLE_INIT_PLUGIN(notify, init_plugin, info)
-
